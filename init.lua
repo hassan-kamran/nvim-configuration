@@ -129,7 +129,9 @@ require("lazy").setup({
 			null_ls.setup({
 				debug = true, -- Enable debugging
 				sources = {
-					null_ls.builtins.formatting.black,
+					null_ls.builtins.formatting.black.with({
+						extra_args = { "--line-length", "78" },
+					}),
 					null_ls.builtins.formatting.isort,
 					null_ls.builtins.diagnostics.flake8,
 					null_ls.builtins.formatting.stylua,
