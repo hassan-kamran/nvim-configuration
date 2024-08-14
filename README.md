@@ -71,10 +71,3 @@ This configuration is open-source and free to use under the MIT License.
 ## Contributions
 
 Feel free to fork this configuration and customize it to your liking. Pull requests are welcome if you'd like to contribute improvements or new features.
-
----
-
-Enjoy a powerful and customizable Neovim setup with this `init.lua` configuration!
-```
-
-This Markdown text includes the complete response with all the instructions, explanations, and details formatted properly for a `README.md` file.
