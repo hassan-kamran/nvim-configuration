@@ -1,6 +1,3 @@
-Certainly! Here's my entire response written in Markdown:
-
-```markdown
 # Neovim Configuration - `init.lua`
 
 This `init.lua` file is a configuration setup for Neovim with several features to enhance the development experience, particularly for Python development. The configuration includes plugins for code formatting, debugging, syntax highlighting, Git integration, and more.
@@ -28,20 +25,9 @@ This `init.lua` file is a configuration setup for Neovim with several features t
 
 Place the `init.lua` file in your Neovim configuration directory, typically located at `~/.config/nvim/`.
 
-```bash
-mkdir -p ~/.config/nvim
-cp path/to/this/init.lua ~/.config/nvim/init.lua
-```
-
 ### 2. Install Plugins
 
-Upon first startup, the configuration will automatically clone and set up the required plugins using LazyVim. Simply open Neovim:
-
-```bash
-nvim
-```
-
-LazyVim will handle the rest.
+Upon first startup, the configuration will automatically clone and set up the required plugins using LazyVim. Simply open Neovim and LazyVim will handle the rest.
 
 ### 3. Python Virtual Environment
 
