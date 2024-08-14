@@ -1,6 +1,6 @@
 # Neovim Configuration - `init.lua`
 
-This `init.lua` file is a configuration setup for Neovim with several features to enhance the development experience, particularly for Python development. The configuration includes plugins for code formatting, debugging, syntax highlighting, Git integration, and more.
+This `init.lua` file is a configuration setup for Neovim with several features to enhance the development experience, particularly for Python and Lua development. The configuration includes plugins for code formatting, debugging, syntax highlighting, Git integration, and more.
 
 ## Features
 
@@ -11,13 +11,18 @@ This `init.lua` file is a configuration setup for Neovim with several features t
 - **Python Virtual Environment Setup**: Automatically sets up a Python virtual environment for Neovim on first boot, ensuring the correct Python interpreter and `pynvim` package are used.
 - **LazyVim Plugin Management**: Integrates the LazyVim plugin manager for easy plugin management.
 - **Git Integration**: Includes GitHub Copilot and Gitsigns for Git integration and code suggestions.
-- **Tree-sitter**: Provides improved syntax highlighting and code folding based on Tree-sitter.
+- **Tree-sitter**: Provides improved syntax highlighting, code folding, and indentation based on Tree-sitter.
 - **NvimTree**: File explorer for easy navigation within projects.
-- **Auto Formatting**: Automatically formats Python files using `black` on save.
+- **Auto Formatting**:
+  - Automatically formats Python files using `black` on save.
+  - Automatically formats Lua files using `stylua` on save.
 - **DAP**: Configures Debug Adapter Protocol (DAP) for Python debugging.
 - **Telescope**: Adds fuzzy finder capabilities for files, buffers, and more.
 - **Commenting**: Simplifies commenting code blocks with `Comment.nvim`.
 - **Terminal Integration**: Uses `toggleterm.nvim` for terminal management, including Lazygit integration.
+- **Tree-sitter Folding and Indentation**: Enables code folding and indentation based on Tree-sitter.
+- **Custom Keybindings**: Provides custom keybindings for various operations, including file explorer, formatting, and fuzzy finding.
+- **Disabling Netrw**: Disables the built-in Netrw file explorer in favor of NvimTree.
 
 ## Installation
 
@@ -27,7 +32,7 @@ Place the `init.lua` file in your Neovim configuration directory, typically loca
 
 ### 2. Install Plugins
 
-Upon first startup, the configuration will automatically clone and set up the required plugins using LazyVim. Simply open Neovim and LazyVim will handle the rest.
+Upon first startup, the configuration will automatically clone and set up the required plugins using LazyVim. Simply open Neovim, and LazyVim will handle the rest.
 
 ### 3. Python Virtual Environment
 
@@ -55,7 +60,8 @@ You can further customize this setup by modifying the `init.lua` file. Some cust
 
 - **Changing the Colorscheme**: The colorscheme is set to `duskfox` from the `nightfox.nvim` plugin. You can change this by modifying the relevant section in the plugin setup.
 - **Adding or Removing Plugins**: Modify the `require("lazy").setup({})` block to include or exclude plugins as per your needs.
-- **Configuring Auto-formatting**: The configuration auto-formats Python files on save using `black`. You can adjust this to include other file types or disable it altogether.
+- **Configuring Auto-formatting**: The configuration auto-formats Python files on save using `black` and Lua files on save using `stylua`. You can adjust this to include other file types or disable it altogether.
+- **Custom Keybindings**: Update or add keybindings in the `vim.api.nvim_set_keymap` section to suit your workflow.
 
 ## Dependencies
 
@@ -63,6 +69,7 @@ You can further customize this setup by modifying the `init.lua` file. Some cust
 - **Python 3**: Required for setting up the Python virtual environment.
 - **Git**: Used for cloning plugins.
 - **Node.js**: Required for some plugins like GitHub Copilot.
+- **LuaRocks**: Ensure `luarocks` is installed to handle Lua dependencies.
 
 ## License
 
