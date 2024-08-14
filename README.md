@@ -71,6 +71,12 @@ You can further customize this setup by modifying the `init.lua` file. Some cust
 - **Node.js**: Required for some plugins like GitHub Copilot.
 - **LuaRocks**: Ensure `luarocks` is installed to handle Lua dependencies.
 
+## Installation
+'rm -rf ~/.config/nvim'
+'rm -rf ~/.local/share/nvim'
+'rm -rf ~/.local/state/nvim'
+'git clone https://github.com/hassan-kamran/nvim-configuration.git ~/.config/nvim'
+
 ## License
 
 This configuration is open-source and free to use under the MIT License.
