@@ -1,7 +1,3 @@
--- Add the path for Lua modules
-package.path = package.path .. ";/opt/homebrew/share/lua/5.4/?.lua"
-package.cpath = package.cpath .. ";/opt/homebrew/lib/lua/5.4/?.so"
-
 -- Enable line numbers and relative line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -35,8 +31,12 @@ local function setup_venv()
 
 	if result == "" then
 		vim.fn.system({ python_executable, "-m", "pip", "install", "pynvim" })
+	else
 	end
 end
+
+-- Call the function to ensure the venv is set up
+setup_venv()
 
 -- Call the function to ensure the venv is set up
 setup_venv()
@@ -57,15 +57,11 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Plugin setup with LazyVim
 require("lazy").setup({
-	-- Catppuccin theme setup
+	-- Colorscheme
 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
+		"EdenEast/nightfox.nvim",
 		config = function()
-			require("catppuccin").setup({
-				flavour = "mocha", -- Set the flavor to mocha
-			})
-			vim.cmd([[colorscheme catppuccin]])
+			vim.cmd([[colorscheme duskfox]])
 		end,
 	},
 
@@ -102,6 +98,7 @@ require("lazy").setup({
 
 	-- NvimTree for file management
 	{ "nvim-tree/nvim-tree.lua" },
+
 	{ "nvim-tree/nvim-web-devicons" },
 
 	-- DAP (Debug Adapter Protocol) setup
@@ -190,8 +187,6 @@ require("lazy").setup({
 						c = cmp.mapping.close(),
 					}),
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
-
-					-- LuaSnip snippet navigation
 					["<Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
 							cmp.select_next_item()
@@ -320,7 +315,7 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- optionally enable 24-bit color
+-- optionally enable 24-bit colour
 vim.opt.termguicolors = true
 
 -- NvimTree setup
@@ -351,6 +346,3 @@ require("lspconfig").pyright.setup({
 })
 
 vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
-
--- Copilot keybinding
-vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
