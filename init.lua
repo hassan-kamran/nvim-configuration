@@ -138,6 +138,9 @@ require("lazy").setup({
 		"github/copilot.vim",
 		config = function()
 			vim.cmd("Copilot enable")
+			vim.g.copilot_enabled = true
+			-- vim.g.copilot_no_tab_map = true  -- Keep your current <C-J> mapping
+			-- vim.g.copilot_assume_mapped = true
 		end,
 	},
 
