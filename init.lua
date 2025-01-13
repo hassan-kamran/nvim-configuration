@@ -108,6 +108,7 @@ require("lazy").setup({
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"ruff",
+					"pyright",
 					"html",
 					"cssls",
 					"ts_ls",
@@ -401,6 +402,21 @@ require("lspconfig").ruff.setup({
 		client.server_capabilities.documentRangeFormattingProvider = false
 		on_attach(client, bufnr)
 	end,
+})
+
+-- Pyright LSP setup
+require("lspconfig").pyright.setup({
+	on_attach = on_attach,
+	settings = {
+		python = {
+			analysis = {
+				autoSearchPaths = true,
+				diagnosticMode = "workspace",
+				useLibraryCodeForTypes = true,
+				typeCheckingMode = "basic",
+			},
+		},
+	},
 })
 
 -- Web development LSP setups
